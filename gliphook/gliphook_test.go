@@ -102,6 +102,10 @@ func TestMultipleRecords(t *testing.T) {
 	color := "#FF0000"
 	var snsEvent events.SNSEvent
 	err = json.Unmarshal(data, &snsEvent)
+	if err != nil {
+		fmt.Println(err)
+		t.Error() // to indicate test failed
+	}
 	message := GlipMessageCard{
 		Attachments: []GlipMessageCardAttachment{},
 	}
