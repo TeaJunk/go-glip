@@ -1,4 +1,4 @@
-module gliphook
+module github.com/TeaJunk/go-glip/gliphook
 
 go 1.15
 
