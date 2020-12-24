@@ -1,4 +1,4 @@
-// Package glipnotify provides simple notification feature
+// Package gliphook provides simple notification feature
 package gliphook
 
 import (
@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-// GlipMessage structure for webhook as per dev documentation
+// GlipMessageSimple structure for simple webhook
 type GlipMessageSimple struct {
 	Activity string `json:"activity"`
 	Title    string `json:"title"`
@@ -16,7 +16,7 @@ type GlipMessageSimple struct {
 	IconUrl  string `json:"icon,omitempty"`
 }
 
-// GlipMessageCard refers to card view in glup
+// GlipMessageCard refers to card view in glip
 type GlipMessageCard struct {
 	// https://developers.ringcentral.com/guide/team-messaging/manual/formatting
 	Title       string                      `json:"title,omitempty"`
