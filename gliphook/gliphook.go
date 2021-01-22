@@ -9,6 +9,10 @@ import (
 )
 
 // GlipMessageSimple structure for simple webhook
+const (
+	contentTypeJson = "application/json"
+)
+
 type GlipMessageSimple struct {
 	Activity string `json:"activity"`
 	Title    string `json:"title"`
@@ -58,7 +62,7 @@ type GlipMessage interface {
 
 // GlipSendHook posts webhook message to passed url
 func GlipSendHook(webhookUrl string, message GlipMessage) error {
-	messageType := "application/json"
+	messageType := contentTypeJson
 
 	data, err := message.glipMessageMarshal()
 	if err != nil {
